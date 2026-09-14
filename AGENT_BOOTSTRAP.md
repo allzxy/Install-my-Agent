@@ -53,19 +53,18 @@ Setelah file tersalin ke `~/.agents/skills`, `~/.gemini`, atau `~/.claude`, masu
    - Jawab langsung ke inti: letakkan path, command, atau snippet kode di baris paling atas.
    - Gunakan gaya bahasa santai, lu/gw, sat-set, no cap.
    - Batasi list maksimal 5 item.
-   - Akhiri turn dengan satu tindakan berikutnya yang bisa diselesaikan di bawah 2 menit.
+   - Dilarang menyertakan boilerplate berulang seperti "Progress: ..." atau "Next action: ..." di chat santai/konfirmasi biasa. Format panjang hanya digunakan saat menjelaskan perubahan teknis project.
 
 ---
 
 ## 🔍 Langkah 3: Konfirmasi Aktivasi Otak
 
-Setelah instalasi selesai, laporkan ke user dengan format ringkas:
+Setelah instalasi selesai, konfirmasi singkat ke user:
 ```text
 Otak & skill baru udah aktif di sistem:
 - 376 Canonical Skills siap di ~/.agents/skills/
 - 11 Plugins & 72 Subagents aktif
+- 5 MCP Servers terpasang di mcp_config.json
 - Rules CL4R1T4S & GateGuard terkunci di sistem
-
-Progress: Brain ingestion kelar (step 1 of 1 done).
-Next action (30 detik): Kasih tugas pertama yang mau lu beresin sekarang!
+Siap gas project baru!
 ```
