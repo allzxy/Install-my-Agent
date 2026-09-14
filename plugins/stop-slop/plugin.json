@@ -1,0 +1,11 @@
+{
+  "name": "stop-slop",
+  "description": "Remove AI writing patterns and slop from prose.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hardik Pandya",
+    "url": "https://github.com/hardikpandya"
+  },
+  "repository": "https://github.com/hardikpandya/stop-slop",
+  "license": "MIT"
+}

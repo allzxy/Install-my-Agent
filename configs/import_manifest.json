@@ -1,0 +1,101 @@
+{
+  "imports": [
+    {
+      "name": "i-have-adhd",
+      "source": "antigravity",
+      "importedAt": "2026-09-09T15:20:29Z",
+      "components": [
+        "skills"
+      ]
+    },
+    {
+      "name": "superpowers",
+      "source": "antigravity",
+      "importedAt": "2026-09-09T15:30:42Z",
+      "components": [
+        "skills"
+      ]
+    },
+    {
+      "name": "mattpocock-skills",
+      "source": "antigravity",
+      "importedAt": "2026-09-09T15:33:33Z",
+      "components": [
+        "skills"
+      ]
+    },
+    {
+      "name": "caveman",
+      "source": "antigravity",
+      "importedAt": "2026-09-09T15:35:36Z",
+      "components": [
+        "skills",
+        "agents",
+        "commands"
+      ]
+    },
+    {
+      "name": "ux-ui-agent-skills",
+      "source": "antigravity",
+      "importedAt": "2026-09-14T09:41:29Z",
+      "components": [
+        "skills",
+        "agents",
+        "commands"
+      ]
+    },
+    {
+      "name": "ecc",
+      "source": "antigravity",
+      "importedAt": "2026-09-14T09:52:02Z",
+      "components": [
+        "skills",
+        "agents",
+        "commands"
+      ]
+    },
+    {
+      "name": "humanizer",
+      "source": "antigravity",
+      "importedAt": "2026-09-14T10:02:16Z",
+      "components": [
+        "skills",
+        "agents"
+      ]
+    },
+    {
+      "name": "stop-slop",
+      "source": "antigravity",
+      "importedAt": "2026-09-14T10:06:03Z",
+      "components": [
+        "skills"
+      ]
+    },
+    {
+      "name": "cl4r1t4s-core",
+      "source": "antigravity",
+      "importedAt": "2026-09-14T10:10:50Z",
+      "components": [
+        "skills"
+      ]
+    },
+    {
+      "name": "buddhist-method",
+      "source": "antigravity",
+      "importedAt": "2026-09-14T10:23:20Z",
+      "components": [
+        "skills"
+      ]
+    },
+    {
+      "name": "context-management",
+      "source": "antigravity",
+      "importedAt": "2026-09-14T10:25:05Z",
+      "components": [
+        "skills",
+        "agents",
+        "commands"
+      ]
+    }
+  ]
+}

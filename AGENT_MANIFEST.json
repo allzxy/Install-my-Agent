@@ -1,0 +1,133 @@
+{
+  "name": "universal-ai-agent-suite",
+  "version": "1.0.0",
+  "description": "Full-stack AI Agent environment replication suite: 370+ canonical skills, 11 powerhouse plugins, 70+ subagents, Antigravity builtins, and CL4R1T4S zero-hallucination obedience rules.",
+  "target_paths": {
+    "windows": {
+      "gemini_dir": "~/.gemini",
+      "gemini_config": "~/.gemini/config",
+      "gemini_plugins": "~/.gemini/config/plugins",
+      "gemini_builtin": "~/.gemini/antigravity-cli/builtin/skills",
+      "gemini_rules": "~/.gemini/GEMINI.md",
+      "agents_dir": "~/.agents",
+      "agents_skills": "~/.agents/skills",
+      "agents_rules": "~/.agents/AGENTS.md"
+    },
+    "unix": {
+      "gemini_dir": "$HOME/.gemini",
+      "gemini_config": "$HOME/.gemini/config",
+      "gemini_plugins": "$HOME/.gemini/config/plugins",
+      "gemini_builtin": "$HOME/.gemini/antigravity-cli/builtin/skills",
+      "gemini_rules": "$HOME/.gemini/GEMINI.md",
+      "agents_dir": "$HOME/.agents",
+      "agents_skills": "$HOME/.agents/skills",
+      "agents_rules": "$HOME/.agents/AGENTS.md"
+    }
+  },
+  "components": {
+    "rules": [
+      "GEMINI.md",
+      "AGENTS.md",
+      "rules/CL4R1T4S_SCAFFOLDING.md"
+    ],
+    "configs": [
+      "configs/config.json",
+      "configs/import_manifest.json",
+      "configs/mcp_config.json"
+    ],
+    "builtin_skills": [
+      "agy-customizations",
+      "antigravity_guide",
+      "generative_ui",
+      "migrate-workflows",
+      "permissioned-github"
+    ],
+    "plugins": [
+      "buddhist-method",
+      "caveman",
+      "cl4r1t4s-core",
+      "context-management",
+      "ecc",
+      "humanizer",
+      "i-have-adhd",
+      "mattpocock-skills",
+      "stop-slop",
+      "superpowers",
+      "ux-ui-agent-skills"
+    ],
+    "canonical_skills_count": 376,
+    "subagents_count": 72
+  },
+  "sources": {
+    "cl4r1t4s-core": {
+      "origin": "Distilled High-Agency Scaffolding from Devin, Cursor, Manus, Claude Code",
+      "references": ["https://cognition.ai", "https://cursor.com", "https://manus.im", "https://docs.anthropic.com"]
+    },
+    "ecc": {
+      "name": "Enterprise Coding Companion",
+      "author": "Affaan Mustafa (@affaanmustafa)",
+      "repository": "https://github.com/affaan-m/ECC",
+      "website": "https://ecc.tools"
+    },
+    "caveman": {
+      "name": "Caveman Token Compressor",
+      "author": "Julius Brussee (@JuliusBrussee)",
+      "repository": "https://github.com/JuliusBrussee/caveman"
+    },
+    "superpowers": {
+      "name": "Superpowers Agent Methodology",
+      "author": "Jesse Vincent (@obra)",
+      "repository": "https://github.com/obra/superpowers"
+    },
+    "ux-ui-agent-skills": {
+      "name": "UX/UI Senior Design Architect Skills",
+      "author": "Thientan Soparat (@plugin87)",
+      "repository": "https://github.com/plugin87/ux-ui-agent-skills"
+    },
+    "mattpocock-skills": {
+      "name": "Skills For Real Engineers",
+      "author": "Matt Pocock (@mattpocock)",
+      "repository": "https://github.com/mattpocock/skills",
+      "website": "https://www.aihero.dev"
+    },
+    "i-have-adhd": {
+      "name": "ADHD-Friendly Agent Formatter",
+      "author": "Ayghri (@ayghri)",
+      "repository": "https://github.com/ayghri/i-have-adhd"
+    },
+    "humanizer": {
+      "name": "AI Text Humanizer & De-Slopper",
+      "author": "Blader (@blader)",
+      "repository": "https://github.com/blader/humanizer",
+      "skills_hub": "https://skills.sh/blader/humanizer"
+    },
+    "stop-slop": {
+      "name": "Stop Slop Prose Filter",
+      "author": "Hardik Pandya (@hardikpandya)",
+      "repository": "https://github.com/hardikpandya/stop-slop"
+    },
+    "buddhist-method": {
+      "name": "Buddhist Ariyasacca Root-Cause Epistemic Discipline",
+      "author": "Udomsak (@udomsak)",
+      "repository": "https://github.com/udomsak/buddhist-method",
+      "skills_hub": "https://skills.sh/udomsak/buddhist-method"
+    },
+    "context-management": {
+      "name": "Advanced Context Persistence & Auto-Memory",
+      "origin": "AI Context Engineering Specification",
+      "subagents": ["context-manager"]
+    },
+    "antigravity-builtin": {
+      "name": "Antigravity CLI Core Builtins",
+      "author": "Google DeepMind / Antigravity Team",
+      "components": ["agy-customizations", "antigravity_guide", "generative_ui", "migrate-workflows", "permissioned-github"]
+    }
+  },
+  "install_commands": {
+    "node_universal": "node install.mjs",
+    "windows_powershell": "powershell -ExecutionPolicy Bypass -File .\\install.ps1",
+    "unix_bash": "bash ./install.sh",
+    "python_server": "python3 install.py",
+    "verify": "powershell -File .\\verify.ps1"
+  }
+}

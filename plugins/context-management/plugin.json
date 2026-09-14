@@ -1,0 +1,8 @@
+{
+  "name": "context-management",
+  "description": "Context persistence, auto-memory recording, and token-saving state restoration.",
+  "version": "1.2.1",
+  "license": "MIT",
+  "repository": "Standard Context Persistence & Memory Protocol",
+  "author": "AI Context Engineering Specification"
+}
