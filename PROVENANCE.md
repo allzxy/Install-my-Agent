@@ -1,10 +1,10 @@
 # 📜 Provenance & Sumber Resmi Komponen (Skills, Plugins, Rules)
 
-Dokumen ini memuat catatan lengkap asal-usul, link repositori upstream, lisensi, dan pembuat dari setiap plugin, skill, serta aturan scaffolding (termasuk CL4R1T4S) yang terpasang di dalam paket ini.
+Dokumen ini memuat catatan lengkap asal-usul, link repositori upstream, lisensi, dan pembuat dari setiap plugin, skill, serta aturan scaffolding (termasuk CL4R1T4S, Obsidian BrainVault, dan Anti-Lag delegation) yang terpasang di dalam paket ini.
 
 ---
 
-## 1. Core Scaffolding & Rules
+## 1. Core Scaffolding, Rules & Protocols
 
 ### CL4R1T4S Core Scaffolding
 - **Nama:** `cl4r1t4s-core`
@@ -13,7 +13,19 @@ Dokumen ini memuat catatan lengkap asal-usul, link repositori upstream, lisensi,
   - **Cursor:** [Cursor System Prompts & Rules](https://cursor.com) (Surgical edits, zero-hallucination)
   - **Manus:** [Manus AI Scaffolding](https://manus.im) (Multi-tool autonomous loop)
   - **Claude Code:** [Anthropic Agent Guidelines](https://docs.anthropic.com/claude/docs) (Tool discipline, gate verification)
-- **Fungsi:** DNA kepatuhan total (*User Alignment First*), GateGuard anti-halusinasi, auto-delegasi subagent, dan komunikasi sat-set.
+- **Fungsi:** DNA kepatuhan total (*User Alignment First*), GateGuard anti-halusinasi, dan gaya komunikasi sat-set ADHD-friendly.
+
+### Autonomous Obsidian BrainVault Protocol
+- **Sumber / Spesifikasi:** Obsidian PKM & Memory Graph Architecture (`C:\Users\Axioo\BrainVault`)
+- **Fungsi:** Menyediakan penyimpanan pengetahuan persisten lintas sesi berbasis Map of Content (`[[00_INDEX]]`), bidirectional wikilinks (`[[Node]]`), serta siklus otonom *Pre-Task Retrieval* dan *Post-Task Brain Sync*.
+
+### Auto-Delegation & Anti-Lag Protocol
+- **Sumber / Spesifikasi:** Subagent Autonomous Multitasking Specification
+- **Fungsi:** Delegasi non-blocking otonom ke worker spesifik (`fast-investigator`, `code-worker`) di latar belakang, memanfaatkan fresh memory context window, serta eliminasi polling (`zero tool polling`) melalui Reactive Wakeup.
+
+### Autonomous Permissions & Deletion Safety Gate
+- **Sumber / Spesifikasi:** Antigravity Autonomous Security Architecture
+- **Fungsi:** Memberikan persetujuan otomatis (pre-approved execution) untuk read/write/terminal/web guna kelancaran sat-set, dengan gerbang verifikasi wajib izin eksplisit user untuk semua operasi destruktif (`rm`, `del`, `git reset --hard`, `git push --force`, `drop database`).
 
 ---
 
@@ -92,11 +104,39 @@ Dokumen ini memuat catatan lengkap asal-usul, link repositori upstream, lisensi,
 
 ---
 
-## 3. Ringkasan Tabel Provenance
+## 3. Production Engineering Skills & Meta-Skills (Canonical Suite)
+
+### 1. Addy Osmani Agent Skills
+- **Pembuat:** Addy Osmani ([@addyosmani](https://github.com/addyosmani))
+- **Link Repositori:** [https://github.com/addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)
+- **Lisensi:** Apache-2.0 / MIT
+- **Isi Komponen yang Diintegrasikan:**
+  - `context-engineering`: Optimasi susunan hierarki konteks (rules files, specs, relevant source, test results) demi output deterministik tanpa token bloat.
+  - `interview-me`: Ekstraksi intent mendalam via wawancara satu per satu pertanyaan (one-question-at-a-time) hingga mencapai ≥95% keyakinan sebelum mulai menulis kode atau spek.
+  - `doubt-driven-development`: Review adversial in-flight dengan konteks segar (CLAIM → EXTRACT → DOUBT → RECONCILE → STOP) untuk menguji setiap keputusan non-trivial.
+  - `planning-and-task-breakdown`: Dekomposisi tugas terspesifikasi menjadi unit implementasi kecil terurut dan dapat diverifikasi (`tasks/plan.md`, `tasks/todo.md`).
+  - `spec-driven-development`: Perancangan spesifikasi terstruktur bertahap (Phase 0 scope check, Specify, Plan, Tasks, Implement) dengan approval human gate.
+  - `code-review-and-quality`: Tinjauan multi-aksis 5 dimensi (Correctness, Readability, Architecture, Security, Performance) sebelum merge ke branch utama.
+
+### 2. Task Observer ("One Skill to Rule Them All")
+- **Pembuat:** Eoghan Henn ([@rebelytics](https://github.com/rebelytics)) / [rebelytics.com](https://rebelytics.com)
+- **Link Repositori:** [https://github.com/rebelytics/one-skill-to-rule-them-all](https://github.com/rebelytics/one-skill-to-rule-them-all)
+- **Lisensi:** CC BY 4.0
+- **Isi Komponen yang Diintegrasikan:**
+  - `task-observer`: Pemantauan otonom jalannya eksekusi task untuk menemukan peluang peningkatan skill, merekam pola keberhasilan, feedback koreksi user, dan metodologi kerja nyata menjadi skill modular baru yang reusable.
+
+---
+
+## 4. Ringkasan Tabel Provenance
 
 | Komponen | Pembuat / Proyek | Link Upstream Repositori | Kategori Utama |
 | :--- | :--- | :--- | :--- |
 | **CL4R1T4S** | Frontier Agents Distillation | Devin, Cursor, Manus, Claude Specs | Behavioral Scaffolding |
+| **Obsidian BrainVault** | Antigravity Architecture | `C:\Users\Axioo\BrainVault` | PKM & Autonomous Memory Graph |
+| **Anti-Lag Delegation** | Subagent Multitasking Spec | Core Scaffolding | Fast-Investigator & Code-Worker |
+| **Deletion Safety Gate** | Security Architecture | Pre-Approved & Mandatory Confirmation | Permissions & Data Protection |
+| **Addy Osmani Skills** | Addy Osmani | `https://github.com/addyosmani/agent-skills` | Context, Interview, Doubt, Spec, Plan, Review |
+| **Task Observer** | Eoghan Henn (Rebelytics) | `https://github.com/rebelytics/one-skill-to-rule-them-all` | Meta-Skill Discovery & Evolution |
 | **ECC** | Affaan Mustafa | `https://github.com/affaan-m/ECC` | 68 Subagents & 292 Skills |
 | **Caveman** | Julius Brussee | `https://github.com/JuliusBrussee/caveman` | Token Optimizer & CaveCrew |
 | **Superpowers** | Jesse Vincent | `https://github.com/obra/superpowers` | Agent TDD & Worktrees |
@@ -116,7 +156,7 @@ Dokumen ini memuat catatan lengkap asal-usul, link repositori upstream, lisensi,
 
 ---
 
-## 4. MCP Servers Suite (`mcp_config.json`)
+## 5. MCP Servers Suite (`mcp_config.json`)
 
 Paket ini menyediakan 5 server MCP resmi siap pakai untuk memperluas toolset agen:
 
@@ -135,4 +175,3 @@ Paket ini menyediakan 5 server MCP resmi siap pakai untuk memperluas toolset age
 5. **`puppeteer` (@modelcontextprotocol/server-puppeteer):**
    - **Repositori:** [https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer)
    - **Fungsi:** Otomasi browser headless untuk scraping, visual regression testing, dan web screenshots.
-

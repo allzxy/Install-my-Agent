@@ -2,7 +2,7 @@
 .SYNOPSIS
     Universal AI Agent Installer (Antigravity, Gemini CLI, Claude Code, Cursor, Codex).
 .DESCRIPTION
-    Installs 370+ canonical skills, 11 powerhouse plugins, 70+ subagents, Antigravity builtin skills,
+    Installs 380+ canonical skills, 11 powerhouse plugins, 70+ subagents, Antigravity builtin skills,
     system configs, and CL4R1T4S zero-hallucination agent rules to your system (~/.gemini and ~/.agents).
 .PARAMETER Scope
     'Global' (default, installs to ~/.gemini and ~/.agents) or 'Workspace' (installs to current directory).
@@ -86,7 +86,7 @@ if (Test-Path $pluginsSrc) {
     Write-Host "  [OK] $pluginCount plugins (ECC, Caveman, Context-Management, UX-UI, etc.) terpasang." -ForegroundColor Green
 }
 
-Write-Host "`n[6/6] Memasang 370+ Canonical Agent Skills..." -ForegroundColor Yellow
+Write-Host "`n[6/6] Memasang 380+ Canonical Agent Skills..." -ForegroundColor Yellow
 $skillsSrc = Join-Path $sourceRoot "skills"
 if (Test-Path $skillsSrc) {
     robocopy $skillsSrc $agentsSkillsDir /E /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
@@ -98,7 +98,7 @@ Write-Host "`n==========================================================" -Foreg
 Write-Host "  🎉 INSTALASI SELESAI SAT-SET & FULLY OPERATIONAL!" -ForegroundColor Cyan
 Write-Host "==========================================================" -ForegroundColor Cyan
 Write-Host "Semua AI Agent (Antigravity, Gemini CLI, Claude, Cursor) sekarang langsung:" -ForegroundColor White
-Write-Host "1. Mengenali 370+ skills di ~/.agents/skills/" -ForegroundColor Gray
+Write-Host "1. Mengenali 380+ skills di ~/.agents/skills/" -ForegroundColor Gray
 Write-Host "2. Mengenali 11 plugins & subagents di ~/.gemini/config/plugins/" -ForegroundColor Gray
 Write-Host "3. Menjalankan aturan CL4R1T4S, auto-delegasi background, dan zero-hallucination!" -ForegroundColor Gray
 Write-Host "Jalankan 'powershell -File .\verify.ps1' untuk test integritas kapan pun.`n" -ForegroundColor Yellow

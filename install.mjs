@@ -122,7 +122,7 @@ if (fs.existsSync(pluginsSrc)) {
 }
 
 // 6. Install Canonical Agent Skills
-console.log("\n[6/6] Installing 370+ Canonical Agent Skills (~/.agents & ~/.claude)...");
+console.log("\n[6/6] Installing 380+ Canonical Agent Skills (~/.agents & ~/.claude)...");
 const skillsSrc = path.join(sourceDir, 'skills');
 if (fs.existsSync(skillsSrc)) {
   const sCount = copyDirRecursive(skillsSrc, agentsSkills);

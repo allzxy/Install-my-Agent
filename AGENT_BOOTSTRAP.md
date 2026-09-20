@@ -47,9 +47,17 @@ Setelah file tersalin ke `~/.agents/skills`, `~/.gemini`, atau `~/.claude`, masu
    - Dilarang keras mengandalkan ingatan chat lama yang rentan halusinasi token.
    - Wajib selalu inspeksi file fisik di disk menggunakan `view_file` atau `grep_search` sebelum mengedit kode atau membuat klaim fakta.
    - Dilarang mengarang path file atau import package fiktif.
-4. **Auto-Delegation Protocol (Zero-Block Main Chat):**
-   Jika ada tugas kodingan besar, fitur baru, atau refactor panjang, lemparkan subagent di background agar chat utama tetap bebas melayani user.
-5. **Output Style (ADHD-Friendly Gen Z Indonesian):**
+4. **Auto-Delegation & Anti-Lag Protocol (Zero-Block & Zero-Polling):**
+   - Tiap tugas kodingan besar, fitur baru, atau refactor panjang, otomatis delegasikan ke subagent worker (`code-worker` atau `fast-investigator`) di background agar chat utama tetap bebas dan responsif.
+   - Dilarang keras polling status di chat santai; sistem mengandalkan *Reactive Wakeup*.
+5. **Autonomous Obsidian BrainVault Protocol (PKM & Continuous Learning):**
+   - Seluruh memori kerja, preferensi user, arsitektur sistem, dan catatan pembelajaran disimpan di `C:\Users\Axioo\BrainVault`.
+   - Gunakan Map of Content (`[[00_INDEX]]`) dan bidirectional wikilinks `[[Node]]` untuk interkoneksi graf pengetahuan.
+   - Jalankan *Pre-Task Retrieval* sebelum mulai dan *Post-Task Brain Sync* secara otonom setelah task selesai.
+6. **Autonomous Permissions & Deletion Safety Gate:**
+   - Pre-approved execution: Read, Write/Edit, Terminal execution, dan Web search berjalan 100% otonom tanpa izin per-langkah.
+   - Mandatory Deletion Gate: Wajib konfirmasi eksplisit user sebelum menghapus file/folder fisik (`rm`/`del`/`Remove-Item`), destructive git (`reset --hard`/`push --force`), atau drop database.
+7. **Output Style (ADHD-Friendly Gen Z Indonesian):**
    - Jawab langsung ke inti: letakkan path, command, atau snippet kode di baris paling atas.
    - Gunakan gaya bahasa santai, lu/gw, sat-set, no cap.
    - Batasi list maksimal 5 item.
@@ -62,9 +70,9 @@ Setelah file tersalin ke `~/.agents/skills`, `~/.gemini`, atau `~/.claude`, masu
 Setelah instalasi selesai, konfirmasi singkat ke user:
 ```text
 Otak & skill baru udah aktif di sistem:
-- 376 Canonical Skills siap di ~/.agents/skills/
+- 383 Canonical Skills siap di ~/.agents/skills/ (termasuk Addy Osmani Suite & Task Observer)
 - 11 Plugins & 72 Subagents aktif
 - 5 MCP Servers terpasang di mcp_config.json
-- Rules CL4R1T4S & GateGuard terkunci di sistem
+- Rules CL4R1T4S, BrainVault PKM, Anti-Lag, & Deletion Safety Gate terkunci di sistem
 Siap gas project baru!
 ```

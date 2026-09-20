@@ -127,7 +127,7 @@ def main():
         print(f"  [OK] {len(plugin_list)} plugins deployed to {gemini_plugins} ({p_count} files).")
 
     # 6. Install Canonical Agent Skills (376 Skills)
-    print("\n[6/7] Installing 370+ Canonical Agent Skills (~/.agents/skills & ~/.claude/skills)...")
+    print("\n[6/7] Installing 380+ Canonical Agent Skills (~/.agents/skills & ~/.claude/skills)...")
     skills_src = source_dir / "skills"
     if skills_src.exists():
         s_count_1 = copy_tree_safe(skills_src, agents_skills)

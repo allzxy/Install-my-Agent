@@ -1,7 +1,7 @@
 {
   "name": "universal-ai-agent-suite",
-  "version": "1.0.0",
-  "description": "Full-stack AI Agent environment replication suite: 370+ canonical skills, 11 powerhouse plugins, 70+ subagents, Antigravity builtins, and CL4R1T4S zero-hallucination obedience rules.",
+  "version": "1.1.0",
+  "description": "Full-stack AI Agent environment replication suite: 380+ canonical skills, 11 powerhouse plugins, 70+ subagents, Antigravity builtins, Autonomous Obsidian BrainVault protocol, Anti-Lag auto-delegation, and CL4R1T4S zero-hallucination obedience rules.",
   "target_paths": {
     "windows": {
       "gemini_dir": "~/.gemini",
@@ -55,13 +55,52 @@
       "superpowers",
       "ux-ui-agent-skills"
     ],
-    "canonical_skills_count": 376,
+    "canonical_skills_count": 383,
     "subagents_count": 72
   },
   "sources": {
     "cl4r1t4s-core": {
       "origin": "Distilled High-Agency Scaffolding from Devin, Cursor, Manus, Claude Code",
-      "references": ["https://cognition.ai", "https://cursor.com", "https://manus.im", "https://docs.anthropic.com"]
+      "references": [
+        "https://cognition.ai",
+        "https://cursor.com",
+        "https://manus.im",
+        "https://docs.anthropic.com"
+      ]
+    },
+    "brainvault-architecture": {
+      "name": "Autonomous Obsidian BrainVault Protocol",
+      "origin": "Antigravity PKM & Memory Graph Specification",
+      "vault_path": "C:\\Users\\Axioo\\BrainVault",
+      "features": [
+        "Map of Content",
+        "Bidirectional Wikilinks",
+        "Pre-Task Retrieval",
+        "Post-Task Auto-Sync",
+        "Zero-Polling Anti-Lag",
+        "Deletion Safety Gate"
+      ]
+    },
+    "agent-skills": {
+      "name": "Addy Osmani Agent Skills Suite",
+      "author": "Addy Osmani (@addyosmani)",
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "skills": [
+        "context-engineering",
+        "interview-me",
+        "doubt-driven-development",
+        "planning-and-task-breakdown",
+        "spec-driven-development",
+        "code-review-and-quality"
+      ]
+    },
+    "task-observer": {
+      "name": "Task Observer — One Skill to Rule Them All",
+      "author": "Eoghan Henn (@rebelytics)",
+      "repository": "https://github.com/rebelytics/one-skill-to-rule-them-all",
+      "skills": [
+        "task-observer"
+      ]
     },
     "ecc": {
       "name": "Enterprise Coding Companion",
@@ -115,12 +154,20 @@
     "context-management": {
       "name": "Advanced Context Persistence & Auto-Memory",
       "origin": "AI Context Engineering Specification",
-      "subagents": ["context-manager"]
+      "subagents": [
+        "context-manager"
+      ]
     },
     "antigravity-builtin": {
       "name": "Antigravity CLI Core Builtins",
       "author": "Google DeepMind / Antigravity Team",
-      "components": ["agy-customizations", "antigravity_guide", "generative_ui", "migrate-workflows", "permissioned-github"]
+      "components": [
+        "agy-customizations",
+        "antigravity_guide",
+        "generative_ui",
+        "migrate-workflows",
+        "permissioned-github"
+      ]
     }
   },
   "install_commands": {

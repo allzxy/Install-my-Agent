@@ -76,7 +76,7 @@ if (Test-Path $pluginsDir) {
 $skillsDir = Join-Path $agentsDir "skills"
 if (Test-Path $skillsDir) {
     $skillsCount = (Get-ChildItem $skillsDir -Directory).Count
-    Write-Host "[PASS] Canonical Agent Skills: $skillsCount skills ditemukan (Target: >= 370)." -ForegroundColor Green
+    Write-Host "[PASS] Canonical Agent Skills: $skillsCount skills ditemukan (Target: >= 380)." -ForegroundColor Green
 } else {
     Write-Host "[FAIL] Skills folder tidak ditemukan." -ForegroundColor Red
     $allGood = $false
