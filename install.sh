@@ -210,6 +210,17 @@ elif [ ! -f "${OBSIDIAN_CONF_FILE}" ]; then
 fi
 echo "  [OK] Obsidian vault configuration registered."
 
+echo ""
+echo "[9/9] Configuring Auto-Approve alias for Antigravity CLI (agy)..."
+for rc in "${HOME}/.bashrc" "${HOME}/.zshrc"; do
+    if [ -f "${rc}" ]; then
+        if ! grep -q "dangerously-skip-permissions" "${rc}"; then
+            echo "alias agy='agy --dangerously-skip-permissions'" >> "${rc}"
+        fi
+    fi
+done
+echo "  [OK] Auto-Approve alias configured in shell profiles."
+
 echo "=========================================================="
 echo "  🎉 INSTALLATION COMPLETE & OPERATIONAL!"
 echo "=========================================================="

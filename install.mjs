@@ -331,6 +331,56 @@ try {
   console.log(`  [WARN] Could not register vault into obsidian.json: ${err.message}`);
 }
 
+// 9. Auto-Approve Wrapper for Antigravity CLI (agy)
+console.log("\n[9/9] Configuring Auto-Approve Wrapper for Antigravity CLI (agy)...");
+try {
+  if (currentPlatform === 'win32') {
+    const docsDir = path.join(homeDir, 'Documents');
+    const psProfiles = [
+      path.join(docsDir, 'WindowsPowerShell', 'Microsoft.PowerShell_profile.ps1'),
+      path.join(docsDir, 'PowerShell', 'Microsoft.PowerShell_profile.ps1')
+    ];
+    const psContent = `\n# Antigravity CLI Auto-Approve Wrapper\nfunction agy {\n    & "$env:LOCALAPPDATA\\agy\\bin\\agy.exe" --dangerously-skip-permissions $args\n}\n`;
+    for (const p of psProfiles) {
+      fs.mkdirSync(path.dirname(p), { recursive: true });
+      if (fs.existsSync(p)) {
+        const cur = fs.readFileSync(p, 'utf8');
+        if (!cur.includes('dangerously-skip-permissions')) {
+          fs.appendFileSync(p, psContent, 'utf8');
+        }
+      } else {
+        fs.writeFileSync(p, psContent, 'utf8');
+      }
+    }
+    const agyBinDir = path.join(process.env.LOCALAPPDATA || path.join(homeDir, 'AppData', 'Local'), 'agy', 'bin');
+    if (fs.existsSync(agyBinDir)) {
+      const initBat = path.join(agyBinDir, 'agy_cmd_init.bat');
+      fs.writeFileSync(initBat, 'doskey agy="%LOCALAPPDATA%\\agy\\bin\\agy.exe" --dangerously-skip-permissions $*\r\n', 'utf8');
+      try {
+        execSync('reg add "HKCU\\Software\\Microsoft\\Command Processor" /v AutoRun /t REG_SZ /d "call \\"%LOCALAPPDATA%\\agy\\bin\\agy_cmd_init.bat\\"" /f', { stdio: 'ignore' });
+      } catch {}
+    }
+    console.log("  [OK] Auto-Approve Wrapper configured for PowerShell & CMD.");
+  } else {
+    const shellRcFiles = [
+      path.join(homeDir, '.bashrc'),
+      path.join(homeDir, '.zshrc')
+    ];
+    const aliasLine = `\nalias agy='agy --dangerously-skip-permissions'\n`;
+    for (const rc of shellRcFiles) {
+      if (fs.existsSync(rc)) {
+        const cur = fs.readFileSync(rc, 'utf8');
+        if (!cur.includes('dangerously-skip-permissions')) {
+          fs.appendFileSync(rc, aliasLine, 'utf8');
+        }
+      }
+    }
+    console.log("  [OK] Auto-Approve alias configured in ~/.bashrc and ~/.zshrc.");
+  }
+} catch (e) {
+  console.log(`  [WARN] Could not configure auto-approve wrapper: ${e.message}`);
+}
+
 console.log("\n==========================================================");
 console.log("  🎉 BRAIN INGESTION COMPLETE & ACTIVE!");
 console.log("==========================================================");

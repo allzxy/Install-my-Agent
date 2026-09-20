@@ -272,6 +272,47 @@ try {
     Write-Host "  [WARN] Tidak dapat mendaftarkan vault ke obsidian.json: $_" -ForegroundColor Yellow
 }
 
+Write-Host "`n[9/9] Mengonfigurasi Auto-Approve Wrapper untuk Antigravity CLI (agy)..." -ForegroundColor Yellow
+try {
+    $psProfileContent = @'
+# Antigravity CLI Auto-Approve Wrapper
+function agy {
+    & "$env:LOCALAPPDATA\agy\bin\agy.exe" --dangerously-skip-permissions $args
+}
+'@
+
+    $profilePaths = @(
+        (Join-Path ([Environment]::GetFolderPath('MyDocuments')) "WindowsPowerShell\Microsoft.PowerShell_profile.ps1"),
+        (Join-Path ([Environment]::GetFolderPath('MyDocuments')) "PowerShell\Microsoft.PowerShell_profile.ps1")
+    )
+    foreach ($pPath in $profilePaths) {
+        $parentDir = Split-Path -Parent $pPath
+        if (!(Test-Path $parentDir)) { New-Item -ItemType Directory -Path $parentDir -Force | Out-Null }
+        if (Test-Path $pPath) {
+            $existing = Get-Content $pPath -Raw -ErrorAction SilentlyContinue
+            if ($existing -notmatch "dangerously-skip-permissions") {
+                Add-Content -Path $pPath -Value "`n$psProfileContent" -Force
+            }
+        } else {
+            Set-Content -Path $pPath -Value $psProfileContent -Force
+        }
+    }
+
+    # CMD AutoRun configuration
+    $regPath = "HKCU:\Software\Microsoft\Command Processor"
+    if (!(Test-Path $regPath)) { New-Item -Path $regPath -Force | Out-Null }
+    $agyBinDir = Join-Path $env:LOCALAPPDATA "agy\bin"
+    if (Test-Path $agyBinDir) {
+        $cmdBatch = Join-Path $agyBinDir "agy_cmd_init.bat"
+        $cmdContent = 'doskey agy="%LOCALAPPDATA%\agy\bin\agy.exe" --dangerously-skip-permissions $*'
+        Set-Content -Path $cmdBatch -Value $cmdContent -Force
+        Set-ItemProperty -Path $regPath -Name "AutoRun" -Value "call `"$cmdBatch`"" -Force
+    }
+    Write-Host "  [OK] Auto-Approve Wrapper terpasang di PowerShell Profile & CMD AutoRun." -ForegroundColor Green
+} catch {
+    Write-Host "  [WARN] Gagal memasang auto-approve wrapper: $_" -ForegroundColor Yellow
+}
+
 Write-Host "`n==========================================================" -ForegroundColor Cyan
 Write-Host "  🎉 INSTALASI SELESAI SAT-SET & FULLY OPERATIONAL!" -ForegroundColor Cyan
 Write-Host "==========================================================" -ForegroundColor Cyan
@@ -280,4 +321,5 @@ Write-Host "1. Mengenali 380+ skills di ~/.agents/skills/" -ForegroundColor Gray
 Write-Host "2. Mengenali 11 plugins & subagents di ~/.gemini/config/plugins/" -ForegroundColor Gray
 Write-Host "3. Menjalankan aturan CL4R1T4S, auto-delegasi background, dan zero-hallucination!" -ForegroundColor Gray
 Write-Host "4. Terintegrasi penuh dengan Obsidian BrainVault di $brainVaultDir" -ForegroundColor Gray
+Write-Host "5. Otomatis auto-approve di terminal (tanpa pop-up izin per-langkah)!" -ForegroundColor Gray
 Write-Host "Jalankan 'powershell -File .\verify.ps1' untuk test integritas kapan pun.`n" -ForegroundColor Yellow

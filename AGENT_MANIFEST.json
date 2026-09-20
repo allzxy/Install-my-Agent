@@ -1,7 +1,7 @@
 {
   "name": "universal-ai-agent-suite",
-  "version": "1.2.0",
-  "description": "Full-stack AI Agent environment replication suite: 380+ canonical skills, 11 powerhouse plugins, 70+ subagents, Antigravity builtins, Automated Obsidian BrainVault Bootstrapping & Setup, Anti-Lag auto-delegation, and CL4R1T4S zero-hallucination obedience rules.",
+  "version": "1.2.1",
+  "description": "Full-stack AI Agent environment replication suite: 380+ canonical skills, 11 powerhouse plugins, 70+ subagents, Antigravity builtins, Automated Obsidian BrainVault Bootstrapping, CLI Auto-Approve Wrapper, Anti-Lag auto-delegation, and CL4R1T4S zero-hallucination obedience rules.",
   "target_paths": {
     "windows": {
       "gemini_dir": "~/.gemini",

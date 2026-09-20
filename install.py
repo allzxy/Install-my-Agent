@@ -312,8 +312,47 @@ Selamat datang di **Map of Content (MOC)** otak agent Antigravity. Seluruh riway
     except Exception as e:
         print(f"  [WARN] Could not register vault into obsidian.json: {e}")
 
-    # 9. Verification
-    print("\n[9/9] Verifying Installation...")
+    # 9. Auto-Approve Wrapper for Antigravity CLI (agy)
+    print("\n[9/10] Configuring Auto-Approve Wrapper for Antigravity CLI (agy)...")
+    try:
+        if system_os == "Windows":
+            my_docs = Path(os.environ.get("USERPROFILE", str(home_dir))) / "Documents"
+            ps_profiles = [
+                my_docs / "WindowsPowerShell" / "Microsoft.PowerShell_profile.ps1",
+                my_docs / "PowerShell" / "Microsoft.PowerShell_profile.ps1"
+            ]
+            ps_content = "\n# Antigravity CLI Auto-Approve Wrapper\nfunction agy {\n    & \"$env:LOCALAPPDATA\\agy\\bin\\agy.exe\" --dangerously-skip-permissions $args\n}\n"
+            for p in ps_profiles:
+                p.parent.mkdir(parents=True, exist_ok=True)
+                if p.exists():
+                    cur = p.read_text(encoding="utf-8", errors="ignore")
+                    if "dangerously-skip-permissions" not in cur:
+                        with p.open("a", encoding="utf-8") as f:
+                            f.write(ps_content)
+                else:
+                    p.write_text(ps_content, encoding="utf-8")
+            
+            agy_bin = Path(os.environ.get("LOCALAPPDATA", str(home_dir / "AppData" / "Local"))) / "agy" / "bin"
+            if agy_bin.exists():
+                init_bat = agy_bin / "agy_cmd_init.bat"
+                init_bat.write_text('doskey agy="%LOCALAPPDATA%\\agy\\bin\\agy.exe" --dangerously-skip-permissions $*\r\n', encoding="utf-8")
+                subprocess.run('reg add "HKCU\\Software\\Microsoft\\Command Processor" /v AutoRun /t REG_SZ /d "call \\"%LOCALAPPDATA%\\agy\\bin\\agy_cmd_init.bat\\"" /f', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            print("  [OK] Auto-Approve Wrapper configured for PowerShell & CMD.")
+        else:
+            rc_files = [home_dir / ".bashrc", home_dir / ".zshrc"]
+            alias_line = "\nalias agy='agy --dangerously-skip-permissions'\n"
+            for rc in rc_files:
+                if rc.exists():
+                    cur = rc.read_text(encoding="utf-8", errors="ignore")
+                    if "dangerously-skip-permissions" not in cur:
+                        with rc.open("a", encoding="utf-8") as f:
+                            f.write(alias_line)
+            print("  [OK] Auto-Approve alias configured in ~/.bashrc and ~/.zshrc.")
+    except Exception as e:
+        print(f"  [WARN] Could not configure auto-approve wrapper: {e}")
+
+    # 10. Verification
+    print("\n[10/10] Verifying Installation...")
     installed_skills = len([s for s in agents_skills.iterdir() if s.is_dir()]) if agents_skills.exists() else 0
     installed_plugins = len([p for p in gemini_plugins.iterdir() if p.is_dir()]) if gemini_plugins.exists() else 0
     installed_builtin = len([b for b in gemini_builtin.iterdir() if b.is_dir()]) if gemini_builtin.exists() else 0
