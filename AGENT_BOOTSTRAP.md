@@ -14,7 +14,7 @@ git clone <URL_REPO_GITHUB>
 cd "Install-my-Agent" # atau nama folder repo
 ```
 
-Lalu jalankan **SALAH SATU** perintah berikut di terminal Anda secara otomatis:
+Lalu jalankan **SALAH SATU** perintah berikut di terminal Anda secara otomatis (seluruh installer otomatis menyertakan **Automated Obsidian BrainVault Bootstrapping & Setup**):
 
 ### A. Jika ada Node.js (Paling Cepat & Universal):
 ```bash
@@ -50,8 +50,10 @@ Setelah file tersalin ke `~/.agents/skills`, `~/.gemini`, atau `~/.claude`, masu
 4. **Auto-Delegation & Anti-Lag Protocol (Zero-Block & Zero-Polling):**
    - Tiap tugas kodingan besar, fitur baru, atau refactor panjang, otomatis delegasikan ke subagent worker (`code-worker` atau `fast-investigator`) di background agar chat utama tetap bebas dan responsif.
    - Dilarang keras polling status di chat santai; sistem mengandalkan *Reactive Wakeup*.
-5. **Autonomous Obsidian BrainVault Protocol (PKM & Continuous Learning):**
-   - Seluruh memori kerja, preferensi user, arsitektur sistem, dan catatan pembelajaran disimpan di `C:\Users\Axioo\BrainVault`.
+5. **Automated Obsidian BrainVault Bootstrapping & Setup (PKM & Continuous Learning):**
+   - Installer otomatis menginstall Obsidian (winget/brew) dan melakukan auto-scaffolding struktur `$HOME/BrainVault` (`01_User_Profile`, `02_Projects`, `03_Knowledge_Base`, `04_Decision_Logs`, `05_Daily_Context`).
+   - Vault otomatis dikonfigurasi (`.obsidian/app.json`, `.obsidian/graph.json` visual node color forces) dan didaftarkan ke `obsidian.json`.
+   - Seluruh memori kerja, preferensi user, arsitektur sistem, dan catatan pembelajaran disimpan di `$HOME/BrainVault`.
    - Gunakan Map of Content (`[[00_INDEX]]`) dan bidirectional wikilinks `[[Node]]` untuk interkoneksi graf pengetahuan.
    - Jalankan *Pre-Task Retrieval* sebelum mulai dan *Post-Task Brain Sync* secara otonom setelah task selesai.
 6. **Autonomous Permissions & Deletion Safety Gate:**
@@ -73,6 +75,7 @@ Otak & skill baru udah aktif di sistem:
 - 383 Canonical Skills siap di ~/.agents/skills/ (termasuk Addy Osmani Suite & Task Observer)
 - 11 Plugins & 72 Subagents aktif
 - 5 MCP Servers terpasang di mcp_config.json
+- Automated Obsidian BrainVault Bootstrapping & Setup aktif ($HOME/BrainVault terhubung langsung ke Obsidian)
 - Rules CL4R1T4S, BrainVault PKM, Anti-Lag, & Deletion Safety Gate terkunci di sistem
 Siap gas project baru!
 ```

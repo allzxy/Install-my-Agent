@@ -93,6 +93,60 @@ if (Test-Path $contextAgent) { $totalSubagents += (Get-ChildItem $contextAgent -
 
 Write-Host "[PASS] Subagents terdaftar: $totalSubagents subagent profiles." -ForegroundColor Green
 
+# 7. Check Obsidian Executable
+$obsidianFound = $false
+$obsidianExe = Join-Path $env:LOCALAPPDATA "Programs\Obsidian\Obsidian.exe"
+if (Test-Path $obsidianExe) {
+    $obsidianFound = $true
+} elseif (Get-Command obsidian -ErrorAction SilentlyContinue) {
+    $obsidianFound = $true
+} else {
+    $regPaths = @(
+        "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*",
+        "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*",
+        "HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*"
+    )
+    foreach ($rp in $regPaths) {
+        $found = Get-ItemProperty $rp -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName -like "*Obsidian*" }
+        if ($found) {
+            $obsidianFound = $true
+            break
+        }
+    }
+}
+
+if ($obsidianFound) {
+    Write-Host "[PASS] Obsidian Executable: Aplikasi Obsidian terdeteksi terpasang di sistem." -ForegroundColor Green
+} else {
+    Write-Host "[FAIL] Obsidian Executable: Aplikasi Obsidian belum ditemukan di sistem." -ForegroundColor Red
+    $allGood = $false
+}
+
+# 8. Check BrainVault Structure & MOC
+$brainVaultDir = Join-Path $HOME "BrainVault"
+if (Test-Path $brainVaultDir) {
+    $subDirs = @("01_User_Profile", "02_Projects", "03_Knowledge_Base", "04_Decision_Logs", "05_Daily_Context")
+    $missingSubs = @()
+    foreach ($sd in $subDirs) {
+        if (-not (Test-Path (Join-Path $brainVaultDir $sd))) {
+            $missingSubs += $sd
+        }
+    }
+    $mocFile = Join-Path $brainVaultDir "00_INDEX.md"
+    $hasMoc = Test-Path $mocFile
+    $hasObsConfig = Test-Path (Join-Path $brainVaultDir ".obsidian")
+
+    if ($missingSubs.Count -eq 0 -and $hasMoc -and $hasObsConfig) {
+        Write-Host "[PASS] BrainVault: Folder $brainVaultDir lengkap dengan 5 direktori inti, 00_INDEX.md, dan konfigurasi graf." -ForegroundColor Green
+    } else {
+        Write-Host "[WARN] BrainVault ditemukan di $brainVaultDir namun beberapa file/folder belum lengkap (Missing: $($missingSubs -join ', '))." -ForegroundColor Yellow
+        $allGood = $false
+    }
+} else {
+    Write-Host "[FAIL] BrainVault: Folder tidak ditemukan di $brainVaultDir" -ForegroundColor Red
+    $allGood = $false
+}
+
 Write-Host "==========================================================" -ForegroundColor Cyan
 if ($allGood) {
     Write-Host "  ✅ ALL SYSTEMS GO! Agen siap bekerja dengan kepatuhan 100%." -ForegroundColor Green

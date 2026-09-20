@@ -82,7 +82,7 @@ Repositori ini adalah paket instalasi mandiri (**Self-Contained Replication Pack
    - `fast-investigator`, `code-worker`, `context-manager`, `cavecrew-builder`, `cavecrew-investigator`, `code-architect`, `e2e-runner`, dll.
 5. **Behavioral Ruleset & Arsitektur Otonom Modern** (`GEMINI.md`, `AGENTS.md`, `CLAUDE.md`, `.cursorrules`, `.windsurfrules`, `.clinerules`, `CONVENTIONS.md`):
    - **User Alignment First & Relentless Completion:** Kepatuhan total tanpa debat, pantang menyerah hingga tugas tuntas dan teruji.
-   - **Autonomous Obsidian BrainVault Protocol:** Integrasi PKM persisten lokal (`C:\Users\Axioo\BrainVault`), Map of Content (`[[00_INDEX]]`), bidirectional wikilinks, serta siklus *Pre-Task Retrieval* & *Post-Task Brain Sync* otomatis.
+   - **Automated Obsidian BrainVault Bootstrapping & Setup:** Auto-install aplikasi Obsidian (winget/brew), auto-scaffolding PKM persisten lokal (`~/BrainVault`), Map of Content (`[[00_INDEX]]`), konfigurasi visual graf (.obsidian/graph.json), registrasi otomatis ke `obsidian.json`, bidirectional wikilinks, serta siklus *Pre-Task Retrieval* & *Post-Task Brain Sync* otomatis.
    - **Auto-Delegation & Anti-Lag Protocol:** Eksekusi non-blocking ke worker background (`fast-investigator`, `code-worker`), isolasi context window bersih, dan *Zero Tool Polling* via Reactive Wakeup.
    - **Autonomous Permissions & Deletion Safety Gate:** Eksekusi pre-approved otomatis untuk aksi read, write, terminal, dan web; wajib konfirmasi izin khusus sebelum eksekusi destruktif (`rm`, `del`, `reset --hard`, `push --force`, database drop).
    - **Gaya Komunikasi Gen Z Indonesia ADHD-friendly:** Santai, lu/gw, sat-set, no cap, anti-kaku, lead with answer/snippet.
@@ -103,7 +103,9 @@ Output yang diharapkan:
 [PASS] Antigravity Built-in Skills: 5 skills ditemukan.
 [PASS] Plugins: 11 plugins ditemukan (Target: >= 11).
 [PASS] Canonical Agent Skills: 383 skills ditemukan (Target: >= 380).
-[PASS] Subagents terdaftar: 70+ subagent profiles.
+[PASS] Subagents terdaftar: 72 subagent profiles.
+[PASS] Obsidian Executable: Aplikasi Obsidian terdeteksi terpasang di sistem.
+[PASS] BrainVault: Folder C:\Users\Axioo\BrainVault lengkap dengan 5 direktori inti, 00_INDEX.md, dan konfigurasi graf.
 ✅ ALL SYSTEMS GO! Agen siap bekerja dengan kepatuhan 100%.
 ```
 
@@ -116,8 +118,11 @@ Kunci kepatuhan, persistensi memori, dan ketajaman agen ini tersusun dalam **Ars
 ### 1. User Alignment First & Relentless Completion
 Agen dilarang menolak tugas, dilarang menceramahi user, dan dilarang malas. Jika ada bug atau error, agen wajib menggunakan tools terminal untuk menguji sampai tuntas secara proaktif.
 
-### 2. Autonomous Obsidian BrainVault (Persistent PKM Graph)
-Memori jangka panjang agen terhubung langsung ke vault Obsidian lokal di `C:\Users\Axioo\BrainVault`:
+### 2. Automated Obsidian BrainVault Bootstrapping & Setup (Persistent PKM Graph)
+Memori jangka panjang agen terhubung langsung ke vault Obsidian lokal di `~/BrainVault` (misal `C:\Users\Axioo\BrainVault`):
+- **Automated Bootstrapping:** Skrip instalasi (`install.ps1`, `install.mjs`, `install.py`, `install.sh`) otomatis mendeteksi dan menginstall Obsidian via winget/brew jika belum ada.
+- **Auto-Scaffolding Struktur:** Otomatis membuat 5 direktori inti (`01_User_Profile`, `02_Projects`, `03_Knowledge_Base`, `04_Decision_Logs`, `05_Daily_Context`) dan Map of Content awal (`00_INDEX.md`).
+- **Graph & Vault Zero-Config:** Otomatis membuat konfigurasi visual graph node color (`.obsidian/graph.json`), rules link markdown (`.obsidian/app.json`), serta meregistrasikan vault langsung ke `obsidian.json` agar langsung terbuka di Obsidian tanpa setting manual.
 - **Pre-Task Retrieval:** Sebelum koding, agen memeriksa vault untuk melihat pola solusi masa lalu dan preferensi user.
 - **Post-Task Brain Sync:** Segera setelah task tuntas, agen secara mandiri mencatat temuan baru, solusi, dan batasan teknis ke dalam vault dengan format bidirectional wikilinks `[[Nama_Node]]` yang bermuara di Map of Content (`[[00_INDEX]]`).
 
@@ -208,7 +213,7 @@ Seluruh komponen dalam repositori ini memiliki atribusi resmi dan link upstream 
 | Komponen / Plugin | Pembuat / Komunitas | Link Repositori Asli | Fungsi Utama |
 | :--- | :--- | :--- | :--- |
 | **CL4R1T4S Scaffolding** | Frontier AI Agents | Disarikan dari [Devin](https://cognition.ai), [Cursor](https://cursor.com), [Manus](https://manus.im) | Behavioral DNA & Zero-Hallucination |
-| **Obsidian BrainVault** | Antigravity Architecture | `C:\Users\Axioo\BrainVault` | PKM Persisten, MOC `[[00_INDEX]]`, Wikilinks |
+| **Automated Obsidian BrainVault** | Antigravity Architecture | `~/BrainVault` | PKM Persisten, Auto-Scaffolding, MOC `[[00_INDEX]]`, Wikilinks |
 | **Anti-Lag Protocol** | Subagent Multitasking Spec | Core Scaffolding | Fast-Investigator, Code-Worker & Zero-Polling |
 | **Deletion Safety Gate** | Security Architecture | Core Scaffolding | Pre-Approved Tools & Gerbang Konfirmasi Hapus |
 | **Addy Osmani Agent Skills** | Addy Osmani | [github.com/addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | Context, Interview, Doubt, Spec, Plan, Review |

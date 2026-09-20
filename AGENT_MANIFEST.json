@@ -1,7 +1,7 @@
 {
   "name": "universal-ai-agent-suite",
-  "version": "1.1.0",
-  "description": "Full-stack AI Agent environment replication suite: 380+ canonical skills, 11 powerhouse plugins, 70+ subagents, Antigravity builtins, Autonomous Obsidian BrainVault protocol, Anti-Lag auto-delegation, and CL4R1T4S zero-hallucination obedience rules.",
+  "version": "1.2.0",
+  "description": "Full-stack AI Agent environment replication suite: 380+ canonical skills, 11 powerhouse plugins, 70+ subagents, Antigravity builtins, Automated Obsidian BrainVault Bootstrapping & Setup, Anti-Lag auto-delegation, and CL4R1T4S zero-hallucination obedience rules.",
   "target_paths": {
     "windows": {
       "gemini_dir": "~/.gemini",
@@ -11,7 +11,8 @@
       "gemini_rules": "~/.gemini/GEMINI.md",
       "agents_dir": "~/.agents",
       "agents_skills": "~/.agents/skills",
-      "agents_rules": "~/.agents/AGENTS.md"
+      "agents_rules": "~/.agents/AGENTS.md",
+      "brainvault_dir": "~/BrainVault"
     },
     "unix": {
       "gemini_dir": "$HOME/.gemini",
@@ -21,7 +22,8 @@
       "gemini_rules": "$HOME/.gemini/GEMINI.md",
       "agents_dir": "$HOME/.agents",
       "agents_skills": "$HOME/.agents/skills",
-      "agents_rules": "$HOME/.agents/AGENTS.md"
+      "agents_rules": "$HOME/.agents/AGENTS.md",
+      "brainvault_dir": "$HOME/BrainVault"
     }
   },
   "components": {
@@ -69,11 +71,15 @@
       ]
     },
     "brainvault-architecture": {
-      "name": "Autonomous Obsidian BrainVault Protocol",
+      "name": "Automated Obsidian BrainVault Bootstrapping & Setup",
       "origin": "Antigravity PKM & Memory Graph Specification",
-      "vault_path": "C:\\Users\\Axioo\\BrainVault",
+      "vault_path": "~/BrainVault",
       "features": [
-        "Map of Content",
+        "Automated Obsidian App Installation",
+        "Auto-Scaffolding 5 Core Directories",
+        "Map of Content (00_INDEX.md)",
+        "Visual Node Colors & Physics Graph Config",
+        "Auto-Registration in obsidian.json",
         "Bidirectional Wikilinks",
         "Pre-Task Retrieval",
         "Post-Task Auto-Sync",
