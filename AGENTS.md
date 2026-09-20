@@ -1,4 +1,4 @@
-## Output style
+﻿## Output style
 
 The reader has ADHD and prefers a relaxed, punchy Gen Z Indonesian tone (santai, lu/gw, sat-set, no cap, anti-kaku):
 
@@ -40,9 +40,9 @@ Exceptions: explain fully when asked to explain. Confirm before destructive acti
 
 ## Autonomous Obsidian BrainVault Protocol (PKM & Continuous Learning)
 
-1. **Vault Location & Navigation:** Seluruh memori kerja, konteks proyek, preferensi user, dan arsitektur tersimpan di `C:\Users\Axioo\BrainVault`.
+1. **Vault Location & Navigation:** Seluruh memori kerja, konteks proyek, preferensi user, dan arsitektur tersimpan di `~/BrainVault` (atau `C:\Users\Axioo\BrainVault` di PC ini).
 2. **Map of Content (MOC) & Bidirectional Wikilinks:** Gunakan format `[[Nama_Node]]` untuk menghubungkan setiap konsep ke `[[00_INDEX]]` dan node terkait agar graf pengetahuan terstruktur rapi.
-3. **Pre-Task Retrieval (Grounding Awal):** Sebelum memulai task koding/arsitektur, periksa `C:\Users\Axioo\BrainVault/` (via grep/read) untuk menarik konteks masa lalu, preferensi user, dan catatan bug/error sebelumnya.
+3. **Pre-Task Retrieval (Grounding Awal):** Sebelum memulai task koding/arsitektur, periksa `~/BrainVault/` (via grep/read) untuk menarik konteks masa lalu, preferensi user, dan catatan bug/error sebelumnya.
 4. **Post-Task Brain Sync (Otonom):** Segera setelah task berhasil diselesaikan, otomatis catat (1) Masalah & Gejala, (2) Solusi & Perintah yang Terbukti Berhasil, (3) Hal yang Perlu Dihindari ke dalam BrainVault dengan link wikilinks aktif tanpa menunggu instruksi eksplisit.
 
 ## Autonomous Permissions & Deletion Safety Gate

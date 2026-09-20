@@ -1,4 +1,4 @@
-# ⚡ Universal AI Agent Installer & Replication Suite
+﻿# ⚡ Universal AI Agent Installer & Replication Suite
 
 [![Version](https://img.shields.io/badge/version-1.2.1-blue.svg)](file:///D:/All/Install%20my%20Agent/AGENT_MANIFEST.json)
 [![Skills](https://img.shields.io/badge/canonical__skills-383-brightgreen.svg)](file:///D:/All/Install%20my%20Agent/skills)
@@ -304,3 +304,4 @@ Hasil verifikasi yang valid:
   ✅ ALL SYSTEMS GO! Agen siap bekerja dengan kepatuhan 100%.
 ==========================================================
 ```
+

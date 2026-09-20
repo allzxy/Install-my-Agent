@@ -1,4 +1,4 @@
-# 📜 Provenance & Sumber Resmi Komponen (Skills, Plugins, Rules)
+﻿# 📜 Provenance & Sumber Resmi Komponen (Skills, Plugins, Rules)
 
 Dokumen ini memuat catatan lengkap asal-usul, link repositori upstream, lisensi, dan pembuat dari setiap plugin, skill, serta aturan scaffolding (termasuk CL4R1T4S, Obsidian BrainVault, dan Anti-Lag delegation) yang terpasang di dalam paket ini.
 
@@ -175,3 +175,4 @@ Paket ini menyediakan 5 server MCP resmi siap pakai untuk memperluas toolset age
 5. **`puppeteer` (@modelcontextprotocol/server-puppeteer):**
    - **Repositori:** [https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer)
    - **Fungsi:** Otomasi browser headless untuk scraping, visual regression testing, dan web screenshots.
+
